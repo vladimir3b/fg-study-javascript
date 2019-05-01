@@ -1,10 +1,11 @@
 {
-  "name": "fg-study-nodejs-from-0-to-expert",
+  "name": "fg-study-javascript",
   "version": "1.0.0",
-  "description": "Study NodeJS with real world applications in JavaScript and Typescript",
+  "description": "Study JavaScript and Typescript",
   "main": "index.js",
   "scripts": {
-    "lesson01": "nodemon ./src/lesson01/index.ts"
+    "lesson01": "nodemon ./src/lesson01/index.ts",
+    "lesson02": "nodemon ./src/lesson02/index.ts"
   },
   "repository": {
     "type": "git",
