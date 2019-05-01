@@ -11,3 +11,6 @@ This lesson treats subjects like cloning, deep cloning, arrays of objects etc.
 
 This lesson covers the subject of decorators in Typescript. As we know decorators are heavily used in Angular. Decorators is an
 experimental Typescript feature so it must be activated in tsconfig.json. Javascript ES6 doesn't support decorators.
+
+
+## Lesson 3 - RxJs Fundamentals
