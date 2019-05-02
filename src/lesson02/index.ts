@@ -1,3 +1,6 @@
+import * as utilities from './../.utilities';
+
+// Demystifying TypeScript Decorators - https://www.youtube.com/watch?v=05FC8Wh7C5w
 /**
  *  01 - Class decorators
  *
@@ -35,11 +38,45 @@ class Person {
 
 const vladimir = new Person('Vladimir', 'Ioan');
 
-console.log(vladimir.fullName());
-console.log(vladimir);
+// console.log(vladimir.fullName());
+// console.log(vladimir);
 
 /**
- * 02 - Factory decorators
+ *  02 - Method decorators
+ *
+ */
+
+function log(target: any, propertyKey: string, descriptor: PropertyDescriptor): any {
+  const originalMethod = descriptor.value;
+  descriptor.value = function(...args: Array<any>) {
+    console.log(`Now we are executing ${propertyKey} method...`);
+    const result = originalMethod.apply(this, args);
+    console.log('Execution done...', result);
+  }
+}
+
+class SomeObjects {
+  prop1: string;
+  prop2: string;
+
+  constructor() {
+    this.prop1 = 'This is the first property of a random object.';
+    this.prop2 = 'This is the second property of a random object.';
+  }
+
+  @log
+  giveDetails(separator: string = '-'): string {
+    console.log(this.prop1, separator , this.prop2);
+    return 'This worked well...'
+  }
+}
+
+const object1 = new SomeObjects();
+
+object1.giveDetails();
+
+/**
+ * 0n - Factory decorators
  */
 
 function details(object: {age: number, gender: 'male' | 'female', children?: Array<string>}) {
@@ -58,12 +95,16 @@ function details(object: {age: number, gender: 'male' | 'female', children?: Arr
 })
 class OtherPerson1 {
   constructor(public firstName: string, public lastName: string) { }
+
+  @log
+  fullName(): string {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
 const someone1 = new OtherPerson1('John', 'Smith');
 const someone2 = new OtherPerson1('David', 'Mitch');
-console.log(someone1);
-console.log(someone2);
+someone1.fullName();
 
 @details({
   age: 37,
@@ -76,8 +117,8 @@ class OtherPerson2 {
 
 const someone3 = new OtherPerson2('Jane', 'Smith');
 const someone4 = new OtherPerson2('Nicole', 'Benjamin');
-console.log(someone3);
-console.log(someone4);
+// console.log(someone3);
+// console.log(someone4);
 
  /**
   * When multiples decorators are applied they fallow the function composition in mathematics rules:
