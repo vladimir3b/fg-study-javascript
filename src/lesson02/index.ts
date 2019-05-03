@@ -76,6 +76,40 @@ const object1 = new SomeObjects();
 object1.giveDetails();
 
 /**
+ *  03 - Property decorators
+ *
+ */
+
+function format(target: any, propertyKey: string) {
+  let value = target[propertyKey];
+  const getter = () => value;
+  const setter = (next: any) => value = `❤️ ${next} ❤️`;
+  Object.defineProperty(target, propertyKey, {
+    get: getter,
+    set: setter,
+    enumerable: true,
+    configurable: true
+  })
+}
+
+class Person2 {
+  @format firstName: string;
+  lastName: string;
+
+  constructor(first: string, last: string) {
+    this.firstName = first;
+    this.lastName = last;
+  }
+
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const aSpecialPerson = new Person2('John', 'Bonjovi');
+console.log('Something for the pain:', aSpecialPerson.fullName());
+
+/**
  * 0n - Factory decorators
  */
 
