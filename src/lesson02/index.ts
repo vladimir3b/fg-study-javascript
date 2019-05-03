@@ -77,6 +77,7 @@ object1.giveDetails();
 
 /**
  *  03 - Property decorators
+ *  - https://www.youtube.com/watch?v=O6A-u_FoEX8
  *
  */
 
