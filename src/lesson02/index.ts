@@ -111,6 +111,44 @@ const aSpecialPerson = new Person2('John', 'Bonjovi');
 console.log('Something for the pain:', aSpecialPerson.fullName());
 
 /**
+ *
+ * 04 - Accessor decorators
+ *
+ */
+
+function logAboutAccessors(target: Object, key: string, descriptor: PropertyDescriptor) {
+  const method = descriptor.value;
+  descriptor.value = function(...args: Array<any>) {
+    // console.log(args);
+    method.apply(this, args);
+  }
+}
+
+class MyObject {
+  private _property1: string;
+  private _property2: string;
+
+  @logAboutAccessors
+  get property1(): string {
+    return this._property1;
+  }
+
+  get property2(): string {
+    return this._property2;
+  }
+
+  constructor(prop1: string, prop2: string) {
+    this._property1 = prop1;
+    this._property2 = prop2;
+  }
+
+}
+
+
+
+
+
+/**
  * 0n - Factory decorators
  */
 
