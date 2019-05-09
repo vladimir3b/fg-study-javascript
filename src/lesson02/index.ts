@@ -204,3 +204,4 @@ import { Person } from './method-decorators';
 const vladimir = new Person('Vladimir', 'Ioan', 'male', new Date('1-21-1982'));
 
 console.log(vladimir.details());
+console.log(vladimir.rawDetails());
