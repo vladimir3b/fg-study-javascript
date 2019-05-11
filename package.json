@@ -6,7 +6,8 @@
   "scripts": {
     "lesson01": "nodemon ./src/lesson01/index.ts",
     "lesson02": "nodemon ./src/lesson02/index.ts",
-    "lesson03": "nodemon ./src/lesson03/index.ts"
+    "lesson03": "nodemon ./src/lesson03/index.ts",
+    "lesson04": "nodemon ./src/lesson04/index.ts"
   },
   "repository": {
     "type": "git",
