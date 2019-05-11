@@ -2,9 +2,9 @@ import {
   interval,
   Observable,
   Observer,
+  Subject,
 } from 'rxjs';
 import { map, throttleTime } from 'rxjs/operators';
-import * as utilities from '../.utilities';
 
 
 /**
@@ -14,6 +14,8 @@ import * as utilities from '../.utilities';
  *
  *
  */
+
+ /*
 
 const observable2 = new Observable(observer => {
   let i = 0;
@@ -36,7 +38,7 @@ const subscription2 = observable2
   );
 
 setTimeout(() => subscription2.unsubscribe(), 10000);
-
+*/
 
 /**
  *  Lesson 03 - RxJS OPERATORS LIKE map() OR throttleTime() | RxJS TUTORIAL
@@ -46,6 +48,7 @@ setTimeout(() => subscription2.unsubscribe(), 10000);
  *
  */
 
+ /*
 const observable3 = interval(1000);
 
 const observer3: Observer<number> = {
@@ -61,4 +64,65 @@ const subscription3 = observable3
   )
   .subscribe(observer3);
 
+
 setTimeout(() => subscription3.unsubscribe(), 10000);
+*/
+
+/**
+ * Lesson 04 - RxJS Subject
+ */
+
+const eventEmitter = new Subject();
+
+eventEmitter.subscribe({
+  next: value => console.log(`You have emitted ${value}.`),
+  error: error => console.error(error),
+  complete: () => console.log('Subject was completed')
+})
+
+eventEmitter.subscribe({
+  next: (value: any) => {
+    if (typeof value === 'number') {
+      console.log(value);
+    } else {
+      console.log('Only number are logged.')
+    }
+  },
+  error: () => console.error('There has been an error...')
+});
+
+// eventEmitter.next(50);
+// eventEmitter.next('50');
+// eventEmitter.error('Go to sleep NOW!')
+
+
+/**
+ * Lesson 05 - Subjects vs Observables
+ */
+
+const subject = new Subject<number>();
+const observable = interval(5000);
+
+const observer1: Observer<number> = {
+  next: value => console.log(value),
+  error: error => console.log(error),
+  complete: () => console.log('Observable was completed...')
+}
+
+const observer2: Observer<number> = {
+  next: value => console.log(`The value is ${value}.`),
+  error: error => console.log(`The error is ${error}.`),
+  complete: () => console.log(`We've completed the observable.`)
+}
+
+observable.subscribe(observer1);
+observable.subscribe(observer2);
+subject.subscribe(observer1);
+subject.subscribe(observer2);
+
+subject.next(500);
+
+subject.next(2000);
+subject.error('There was an error...');
+
+observable.next(5);
