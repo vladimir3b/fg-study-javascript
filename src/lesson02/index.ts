@@ -200,8 +200,12 @@
 //   */
 
 import { Person } from './method-decorators';
+import { PersonSecond } from './property.decorators';
 
 const vladimir = new Person('Vladimir', 'Ioan', 'male', new Date('1-21-1982'));
 
 console.log(vladimir.details());
 console.log(vladimir.rawDetails());
+
+const serban = new PersonSecond('Serban', 'Andrei', 'male', new Date('6-16-1985'));
+console.log(serban.firstName);
