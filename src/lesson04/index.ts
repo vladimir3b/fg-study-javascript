@@ -1,3 +1,5 @@
+import { of } from 'rxjs';
+
 /**
  * JavaScript — Property Descriptor
  * https://codeburst.io/javascript-object-property-attributes-ac012be317e2*
@@ -125,3 +127,39 @@ console.log((man as any).salary);
 (man as any).salary = 90;
 console.log((man as any).salary);
 
+const manOfWar = {
+  firstName: 'Thor',
+  middleName: 'God',
+  lastName: 'Odin',
+  get fullName(): string {;
+    return this.middleName ? `${this.firstName} ${this.middleName} ${this.fullName}` : `${this.firstName} ${this.fullName}`;
+  },
+  set fullName(fullName: string) {
+    if (/^[a-zA-Z\s]*$/.test(fullName)) {
+      const listOfNames = fullName.split(' ');
+      switch (listOfNames.length) {
+        case 0:
+          this.firstName = '';
+          this.middleName = '';
+          this.lastName = '';
+          break;
+        case 1:
+          this.firstName = listOfNames[0];
+          this.middleName = '';
+          this.lastName = '';
+          break;
+        case 2:
+          this.firstName = listOfNames[0];
+          this.middleName = '';
+          this.lastName = listOfNames[1];
+          break;
+        default:
+          this.firstName = listOfNames[0];
+          this.middleName = listOfNames[1];
+          this.lastName = listOfNames[2];
+      }
+    }
+  }
+}
+
+console.log(manOfWar.fullName);
