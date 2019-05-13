@@ -8,7 +8,7 @@ import { map, throttleTime } from 'rxjs/operators';
 
 
 /**
- *  Lesson 02 - OBSERVABLES, OBSERVERS & SUBSCRIPTIONS | RxJS TUTORIAL
+ *  Lesson 03 - OBSERVABLES, OBSERVERS & SUBSCRIPTIONS | RxJS TUTORIAL
  *
  *  https://www.youtube.com/watch?v=Tux1nhBPl_w&list=PL55RiY5tL51pHpagYcrN9ubNLVXF8rGVi&index=2
  *
