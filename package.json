@@ -1,0 +1,33 @@
+{
+  "name": "fg-study-javascript",
+  "version": "1.0.0",
+  "description": "Study JavaScript and Typescript",
+  "main": "index.js",
+  "scripts": {
+    "chapter01": "nodemon ./src/chapter01/index.js",
+    "chapter02": "nodemon ./src/chapter02/index.js",
+    "chapter03": "nodemon ./src/chapter03/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimirioan82/fg-study-javascript.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Vladimir-Ioan Văraru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladimirioan82/fg-study-javascript/issues"
+  },
+  "homepage": "https://github.com/vladimirioan82/fg-study-javascript#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.9",
+    "rxjs": "^6.5.1",
+    "serve-favicon": "^2.5.0"
+  }
+}
