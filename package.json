@@ -6,7 +6,8 @@
   "scripts": {
     "chapter01": "nodemon ./src/chapter01/index.js",
     "chapter02": "nodemon ./src/chapter02/index.js",
-    "chapter03": "nodemon ./src/chapter03/index.js"
+    "chapter03": "nodemon ./src/chapter03/index.js",
+    "chapter04": "nodemon ./src/chapter04/index.js"
   },
   "repository": {
     "type": "git",
