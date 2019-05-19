@@ -18,7 +18,12 @@ class Router {
       response.render('root', {
         pageTitle: 'Study RxJs - Home Page'
       });
-    })
+    });
+    this[_router].get('/lesson02', (request, response) => {
+      response.render('lessons/lesson02', {
+        pageTitle: 'What Are Observables and How to Create Them'
+      });
+    });
   }
 }
 

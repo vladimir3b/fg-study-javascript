@@ -28,7 +28,7 @@
     "express-handlebars": "^3.1.0",
     "lodash": "^4.17.11",
     "nodemon": "^1.18.9",
-    "rxjs": "^6.5.1",
+    "rxjs": "^6.5.2",
     "serve-favicon": "^2.5.0"
   }
 }
