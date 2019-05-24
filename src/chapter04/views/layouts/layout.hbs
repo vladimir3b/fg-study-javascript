@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<div class="page-wrapper chiller-theme">
+	<div class="page-wrapper chiller-theme toggled">
 
 		<button id="show-sidebar" class="btn btn-sm btn-dark">
 			<i class="fas fa-bars"></i>
@@ -38,27 +38,30 @@
 				<div class="sidebar-menu">
 					<ul>
 
-						<li class="sidebar-dropdown">
-							<a href="#">
-								<i class="fa fa-child"></i>
-								<span>Dashboard</span>
-							</a>
-							<div class="sidebar-submenu">
-								<ul>
-									<li>
-										<a href="#">Dashboard 1
-											<span class="badge badge-pill badge-success">Pro</span>
-										</a>
-									</li>
-									<li>
-										<a href="#">Dashboard 2</a>
-									</li>
-									<li>
-										<a href="#">Dashboard 3</a>
-									</li>
-								</ul>
-							</div>
-						</li>
+						{{# each menu as | element | }}
+							<li class="sidebar-dropdown">
+								{{# if element.unique }}
+									<a href="{{element.pages.url}}">
+										<i class="{{element.icon}}"></i>
+										<span>{{element.title}}</span>
+									</a>
+								{{ else }}
+									<a>
+										<i class="{{element.icon}}"></i>
+										<span>{{element.title}}</span>
+									</a>
+									<div class="sidebar-submenu">
+										<ul>
+											{{# each element.pages as | page | }}
+											<li>
+												<a href="{{page.url}}">{{ page.title }}</a>
+											</li>
+											{{/each}}
+										</ul>
+									</div>
+								{{/if}}
+							</li>
+						{{/each}}
 
 					</ul>
 				</div>

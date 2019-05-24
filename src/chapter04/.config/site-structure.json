@@ -4,23 +4,25 @@
   "menu": [
     {
       "title": "About This Chapter",
-      "icon": "fa-child",
+      "icon": "fas fa-chess-queen",
       "pages": [
         "home"
       ]
     },
     {
       "title": "Dive into the RxJs Environment",
-      "icon": "fa-child",
+      "icon": "fas fa-chess-king",
       "pages": [
         "lesson02",
         "lesson03",
-        "lesson06"
+        "lesson06",
+        "lesson08",
+        "lesson07"
       ]
     },
     {
       "title": "Implementing Observables",
-      "icon": "fa-child",
+      "icon": "fas fa-chess-rook",
       "pages": [
         "lesson01",
         "lesson04",

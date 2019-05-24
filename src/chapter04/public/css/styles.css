@@ -1,3 +1,7 @@
+a {
+  cursor: pointer;
+}
+
 @keyframes swing {
   0% {
     transform: rotate(0deg);
@@ -103,12 +107,12 @@ body {
 /*----------------sidebar-wrapper----------------*/
 
 .sidebar-wrapper {
-  width: 260px;
+  width: 400px;
   height: 100%;
   max-height: 100%;
   position: fixed;
   top: 0;
-  left: -300px;
+  left: -420px;
   z-index: 999;
 }
 

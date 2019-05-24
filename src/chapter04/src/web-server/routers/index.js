@@ -1,9 +1,9 @@
 const express = require('express');
 const siteStructure = require('./../../../.config/site-structure.json');
+const generateMenu = require('./parse-menu');
 
 const _router = Symbol('_router');
 const _getRoutes = Symbol('_getRoutes');
-
 
 class Router {
   constructor() {
@@ -15,16 +15,18 @@ class Router {
   }
 
   [_getRoutes]() {
+    const menu = generateMenu();
     siteStructure.pages.forEach(page => {
       this[_router].get(page.route, (request, response) => {
         response.render(page.location, {
           pageTitle: page.title,
           chapterTitle: siteStructure.chapterTitle,
-          menu: siteStructure.menu
+          menu: menu
         });
       });
     });
   }
 }
+
 
 module.exports = new Router();
