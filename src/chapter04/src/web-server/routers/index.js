@@ -1,4 +1,5 @@
 const express = require('express');
+const siteStructure = require('./../../../.config/site-structure.json');
 
 const _router = Symbol('_router');
 const _getRoutes = Symbol('_getRoutes');
@@ -14,14 +15,13 @@ class Router {
   }
 
   [_getRoutes]() {
-    this[_router].get('/', (request, response) => {
-      response.render('root', {
-        pageTitle: 'Study RxJs - Home Page'
-      });
-    });
-    this[_router].get('/lesson02', (request, response) => {
-      response.render('pages/lesson02', {
-        pageTitle: 'What Are Observables and How to Create Them'
+    siteStructure.pages.forEach(page => {
+      this[_router].get(page.route, (request, response) => {
+        response.render(page.location, {
+          pageTitle: page.title,
+          chapterTitle: siteStructure.chapterTitle,
+          menu: siteStructure.menu
+        });
       });
     });
   }

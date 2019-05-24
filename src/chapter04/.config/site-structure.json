@@ -1,0 +1,100 @@
+{
+  "chapterTitle": "RxJs Fundamentals",
+
+  "menu": [
+    {
+      "title": "About This Chapter",
+      "icon": "fa-child",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "title": "Dive into the RxJs Environment",
+      "icon": "fa-child",
+      "pages": [
+        "lesson02",
+        "lesson03",
+        "lesson06"
+      ]
+    },
+    {
+      "title": "Implementing Observables",
+      "icon": "fa-child",
+      "pages": [
+        "lesson01",
+        "lesson04",
+        "lesson05"
+      ]
+    }
+  ],
+
+  "pages": [
+    {
+      "title": "About This Chapter",
+      "code": "home",
+      "route": "/",
+      "location": "root"
+    },
+    {
+      "title": "Lesson 01",
+      "code": "lesson01",
+      "route": "/lesson01",
+      "location": "pages/lesson01"
+    },
+    {
+      "title": "Lesson 02",
+      "code": "lesson02",
+      "route": "/lesson02",
+      "location": "pages/lesson02"
+    },
+    {
+      "title": "Lesson 03",
+      "code": "lesson03",
+      "route": "/lesson03",
+      "location": "pages/lesson03"
+    },
+    {
+      "title": "Lesson 04",
+      "code": "lesson04",
+      "route": "/lesson04",
+      "location": "pages/lesson04"
+    },
+    {
+      "title": "Lesson 05",
+      "code": "lesson05",
+      "route": "/lesson05",
+      "location": "pages/lesson05"
+    },
+    {
+      "title": "Lesson 06",
+      "code": "lesson06",
+      "route": "/lesson06",
+      "location": "pages/lesson06"
+    },
+    {
+      "title": "Lesson 07",
+      "code": "lesson07",
+      "route": "/lesson07",
+      "location": "pages/lesson07"
+    },
+    {
+      "title": "Lesson 08",
+      "code": "lesson08",
+      "route": "/lesson08",
+      "location": "pages/lesson08"
+    },
+    {
+      "title": "Lesson 09",
+      "code": "lesson09",
+      "route": "/lesson09",
+      "location": "pages/lesson09"
+    },
+    {
+      "title": "Lesson 10",
+      "code": "lesson10",
+      "route": "/lesson10",
+      "location": "pages/lesson10"
+    }
+  ]
+}

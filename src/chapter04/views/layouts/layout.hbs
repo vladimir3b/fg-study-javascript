@@ -18,7 +18,65 @@
 </head>
 <body>
 
-  {{{ body }}}
+	<div class="page-wrapper chiller-theme">
+
+		<button id="show-sidebar" class="btn btn-sm btn-dark">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<nav id="sidebar" class="sidebar-wrapper">
+			<div class="sidebar-content">
+				<div class="sidebar-brand">
+					<span>{{ chapterTitle }}</span>
+					<div id="close-sidebar">
+						<i class="fas fa-times"></i>
+					</div>
+				</div>
+
+
+				<!-- sidebar-search  -->
+				<div class="sidebar-menu">
+					<ul>
+
+						<li class="sidebar-dropdown">
+							<a href="#">
+								<i class="fa fa-child"></i>
+								<span>Dashboard</span>
+							</a>
+							<div class="sidebar-submenu">
+								<ul>
+									<li>
+										<a href="#">Dashboard 1
+											<span class="badge badge-pill badge-success">Pro</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">Dashboard 2</a>
+									</li>
+									<li>
+										<a href="#">Dashboard 3</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="sidebar-footer">
+				Keep learning...
+			</div>
+		</nav>
+		<main class="container">
+			<div class="row">
+				<div class="col">
+					{{{ body }}}
+				</div>
+			</div>
+		</main>
+	</div>
+
+
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
