@@ -1,1 +1,90 @@
-ana bea multa bere cu prietenii ei
+<div class="container">
+  <div class="row">
+    <div class="col text-left">
+      <h1 class="display-1">{{ details.chapterTitle }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mb-4">
+      {{{ details.description }}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h6 class="display-4 text-info">Study Materials</h6>
+      <div class="accordion" id="accordionExample">
+
+        {{# each details.studyMaterials as | material index | }}
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapse{{index}}"
+                    aria-expanded="true"
+                    aria-controls="collapse{{index}}">
+                  {{ material.title }}
+                  <span class="badge badge-pill badge-success">{{ material.type }}</span>
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapse{{index}}"
+                class="collapse hide"
+                aria-labelledby="headingOne"
+                data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="container">
+
+                  <div class="row">
+                    <div class="col-2 text-right">
+                      <em>Author:</em>
+                    </div>
+                    <div class="col text-left">
+                      {{ material.author }} - {{ material.dateOfPublication }}
+                    </div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-2 text-right">
+                      <em>Link:</em>
+                    </div>
+                    <div class="col text-left mb-2">
+                      <a href="{{ material.link }}"
+                          target="_blank">
+                        {{ material.link }}
+                      </a>
+                    </div>
+                  </div>
+
+                  {{!-- <div class="row">
+                    <div class="col">
+                      <hr>
+                    </div>
+                  </div> --}}
+
+                  <div class="row">
+                    <div class="col-2 text-right">
+                      <em>Contents:</em>
+                    </div>
+                    <div class="col text-left">
+                      <ul class="list-group">
+                        {{# each material.contents as | chapter | }}
+                          <li class="list-group-item list-group-item-action">{{ chapter }}</li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+  </div>
+</div>

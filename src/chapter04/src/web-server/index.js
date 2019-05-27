@@ -4,7 +4,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const handlebars = require('express-handlebars');
 
-const config = require('./../../.config/config.json');
+const config = require('./../../config.json');
 const routes = require('./routers');
 
 // Private methods and properties in javascript

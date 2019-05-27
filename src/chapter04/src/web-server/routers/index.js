@@ -1,7 +1,10 @@
 const express = require('express');
-const siteStructure = require('./../../../.config/site-structure.json');
-const generateMenu = require('./parse-menu');
 
+const config = require('./../../../config.json');
+const generateMenu = require('./menu');
+
+const details = config['details'];
+const siteStructure = config['site-structure'];
 const _router = Symbol('_router');
 const _getRoutes = Symbol('_getRoutes');
 
@@ -15,13 +18,14 @@ class Router {
   }
 
   [_getRoutes]() {
-    const menu = generateMenu();
+    const menu = generateMenu(siteStructure);
     siteStructure.pages.forEach(page => {
       this[_router].get(page.route, (request, response) => {
         response.render(page.location, {
           pageTitle: page.title,
-          chapterTitle: siteStructure.chapterTitle,
-          menu: menu
+          chapterTitle: details.chapterTitle,
+          menu: menu,
+          details: (page.code === 'home') ? details : null
         });
       });
     });

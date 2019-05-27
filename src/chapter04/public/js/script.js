@@ -1,4 +1,3 @@
-// console.log('Page loaded...');
 jQuery(function ($) {
 
     $(".sidebar-dropdown > a").click(function() {
