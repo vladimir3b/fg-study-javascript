@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<div class="page-wrapper chiller-theme toggled">
+	<div class="page-wrapper chiller-theme">
 
 		<button id="show-sidebar" class="btn btn-sm btn-dark">
 			<i class="fas fa-bars"></i>
@@ -39,28 +39,31 @@
 					<ul>
 
 						{{# each menu as | element | }}
-							<li class="sidebar-dropdown">
 								{{# if element.unique }}
-									<a href="{{element.pages.url}}">
-										<i class="{{element.icon}}"></i>
-										<span>{{element.title}}</span>
-									</a>
+									<li>
+										<a href="{{element.pages.url}}">
+											<i class="{{element.icon}}"></i>
+											<span>{{element.title}}</span>
+											{{!-- <span>{{element.pages.url}}</span> --}}
+										</a>
+									</li>
 								{{ else }}
-									<a>
-										<i class="{{element.icon}}"></i>
-										<span>{{element.title}}</span>
-									</a>
-									<div class="sidebar-submenu">
-										<ul>
-											{{# each element.pages as | page | }}
-											<li>
-												<a href="{{page.url}}">{{ page.title }}</a>
-											</li>
-											{{/each}}
-										</ul>
-									</div>
+									<li class="sidebar-dropdown">
+											<a>
+												<i class="{{element.icon}}"></i>
+												<span>{{element.title}}</span>
+											</a>
+											<div class="sidebar-submenu">
+												<ul>
+													{{# each element.pages as | page | }}
+													<li>
+														<a href="{{page.url}}">{{ page.title }}</a>
+													</li>
+													{{/each}}
+												</ul>
+											</div>
+									</li>
 								{{/if}}
-							</li>
 						{{/each}}
 
 					</ul>
