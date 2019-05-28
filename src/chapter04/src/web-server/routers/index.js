@@ -22,6 +22,7 @@ class Router {
     siteStructure.pages.forEach(page => {
       this[_router].get(page.route, (request, response) => {
         response.render(page.location, {
+          scripts: page.scripts,
           pageTitle: page.title,
           chapterTitle: details.chapterTitle,
           menu: menu,
