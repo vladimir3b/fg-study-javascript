@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -13,69 +15,26 @@
   <link
       href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
       rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/prism.css">
+
+
   <title>{{ pageTitle }}</title>
 </head>
 <body>
 
 	<div class="page-wrapper chiller-theme">
 
-		<button id="show-sidebar" class="btn btn-sm btn-dark">
-			<i class="fas fa-bars"></i>
-		</button>
+		{{> sidemenu}}
 
-		<nav id="sidebar" class="sidebar-wrapper">
-			<div class="sidebar-content">
-				<div class="sidebar-brand">
-					<span>{{ chapterTitle }}</span>
-					<div id="close-sidebar">
-						<i class="fas fa-times"></i>
-					</div>
-				</div>
-
-
-				<!-- sidebar-search  -->
-				<div class="sidebar-menu">
-					<ul>
-
-						{{# each menu as | element | }}
-								{{# if element.unique }}
-									<li>
-										<a href="{{element.pages.url}}">
-											<i class="{{element.icon}}"></i>
-											<span>{{element.title}}</span>
-											{{!-- <span>{{element.pages.url}}</span> --}}
-										</a>
-									</li>
-								{{ else }}
-									<li class="sidebar-dropdown">
-											<a>
-												<i class="{{element.icon}}"></i>
-												<span>{{element.title}}</span>
-											</a>
-											<div class="sidebar-submenu">
-												<ul>
-													{{# each element.pages as | page | }}
-													<li>
-														<a href="{{page.url}}">{{ page.title }}</a>
-													</li>
-													{{/each}}
-												</ul>
-											</div>
-									</li>
-								{{/if}}
-						{{/each}}
-
-					</ul>
-				</div>
-			</div>
-			<div class="sidebar-footer">
-				Keep learning...
-			</div>
-		</nav>
 		<main class="page-content">
 			{{{ body }}}
+			{{> footer}}
 		</main>
+
+
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -95,6 +54,8 @@
 			crossorigin="anonymous">
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.min.js">
+	</script>
+	<script src="js/prism.js">
 	</script>
 	{{# each scripts as | script |}}
 		<script src="js/{{ script }}"></script>

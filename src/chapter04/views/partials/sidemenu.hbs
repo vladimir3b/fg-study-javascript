@@ -1,0 +1,51 @@
+<button id="show-sidebar" class="btn btn-sm btn-dark">
+  <i class="fas fa-bars"></i>
+</button>
+
+<nav id="sidebar" class="sidebar-wrapper">
+  <div class="sidebar-content">
+    <div class="sidebar-brand">
+      <span>{{ chapterTitle }}</span>
+      <div id="close-sidebar">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+
+    <div class="sidebar-menu">
+      <ul>
+
+        {{# each menu as | element | }}
+            {{# if element.unique }}
+              <li>
+                <a href="{{element.pages.url}}">
+                  <i class="{{element.icon}}"></i>
+                  <span>{{element.title}}</span>
+                  {{!-- <span>{{element.pages.url}}</span> --}}
+                </a>
+              </li>
+            {{ else }}
+              <li class="sidebar-dropdown">
+                  <a>
+                    <i class="{{element.icon}}"></i>
+                    <span>{{element.title}}</span>
+                  </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                      {{# each element.pages as | page | }}
+                      <li>
+                        <a href="{{page.url}}">{{ page.title }}</a>
+                      </li>
+                      {{/each}}
+                    </ul>
+                  </div>
+              </li>
+            {{/if}}
+        {{/each}}
+
+      </ul>
+    </div>
+  </div>
+  <div class="sidebar-footer">
+    Keep learning...
+  </div>
+</nav>

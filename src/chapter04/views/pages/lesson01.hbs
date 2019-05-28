@@ -1,29 +1,96 @@
+<style type="text/css">
+
+</style>
 <div class="container">
   <div class="row">
     <div class="col">
       <h1 class="display-4">Declarative vs Imperative Programming</h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col-2">
-      <button class="btn btn-info"
-          onClick="Programming.declarative()">
-        declarative procedure
-      </button>
-    </div>
-    <div class="col">
 
+  <div class="row">
+    <div class="col">
+      <h2 class="mt-4">Imperative programming</h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-2">
-      <button class="btn btn-info"
+    <div class="col">
+      <blockquote>
+        <p>
+          In computer science, imperative programming is a programming paradigm that uses statements that change a program's
+          state. In much the same way that the imperative mood in natural languages expresses commands, an imperative program
+          consists of commands for the computer to perform. Imperative programming focuses on describing how a program operates.
+        </p>
+        <footer class="text-right">
+          — from Wikipedia
+          <a href="https://en.wikipedia.org/wiki/Imperative_programming"
+              target="_blank">
+            see more
+          </a>...
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+{{> snippet0101 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Please open Chrome DevTools Console to
+      <span class="btn-link"
+          style="cursor: pointer;"
           onClick="Programming.imperative()">
-        imperative procedure
-      </button>
-    </div>
-    <div class="col">
-
+        run script above
+      </span>.
     </div>
   </div>
+
+
+
+  <div class="row">
+    <div class="col">
+      <h2 class="mt-4">Declarative programming</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <blockquote>
+        <p>
+          In computer science, declarative programming is a programming paradigm—a style of building the structure and elements of
+          computer programs—that expresses the logic of a computation without describing its control flow.
+
+          Many languages that apply this style attempt to minimize or eliminate side effects by describing what the program must
+          accomplish in terms of the problem domain, rather than describe how to accomplish it as a sequence of the programming
+          language primitives (the how being left up to the language's implementation). This is in contrast with imperative
+          programming, which implements algorithms in explicit steps.
+
+          Declarative programming often considers programs as theories of a formal logic, and computations as deductions in that
+          logic space. Declarative programming may greatly simplify writing parallel programs.
+        </p>
+        <footer class="text-right">
+          — from Wikipedia
+          <a href="https://en.wikipedia.org/wiki/Declarative_programming"
+              target="_blank">
+            see more
+          </a>...
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+{{> snippet0102 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Please open Chrome DevTools Console to
+      <span class="btn-link" style="cursor: pointer;" onClick="Programming.declarative()">
+        run script above
+      </span>.
+    </div>
+  </div>
+
 </div>
