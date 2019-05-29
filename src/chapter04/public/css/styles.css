@@ -1,5 +1,18 @@
+@import url('./fonts.css');
+@import url('./sidemenu.css');
+@import url('./prism.css');
+@import url('./footer.css');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
 a {
   cursor: pointer;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 blockquote {

@@ -5,7 +5,7 @@
 <nav id="sidebar" class="sidebar-wrapper">
   <div class="sidebar-content">
     <div class="sidebar-brand">
-      <span>{{ chapterTitle }}</span>
+      <span class="text-warning">{{ chapterTitle }}</span>
       <div id="close-sidebar">
         <i class="fas fa-times"></i>
       </div>
@@ -20,7 +20,6 @@
                 <a href="{{element.pages.url}}">
                   <i class="{{element.icon}}"></i>
                   <span>{{element.title}}</span>
-                  {{!-- <span>{{element.pages.url}}</span> --}}
                 </a>
               </li>
             {{ else }}
@@ -45,7 +44,7 @@
       </ul>
     </div>
   </div>
-  <div class="sidebar-footer">
+  <div class="sidebar-footer text-success p-1">
     Keep learning...
   </div>
 </nav>

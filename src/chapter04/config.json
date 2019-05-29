@@ -89,13 +89,13 @@
         ]
       },
       {
-        "title": "Lesson 01",
+        "title": "01 - Declarative vs Imperative",
         "code": "lesson01",
         "route": "/lesson01",
         "location": "pages/lesson01",
         "scripts": [
           "menu.js",
-          "lesson01.js"
+          "lessons/lesson01.js"
         ]
       },
       {
@@ -105,7 +105,7 @@
         "location": "pages/lesson02",
         "scripts": [
           "menu.js",
-          "lesson02.js"
+          "lessons/lesson02.js"
         ]
       },
       {

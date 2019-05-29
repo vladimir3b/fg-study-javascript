@@ -5,36 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script type="text/javascript" src="http://livejs.com/live.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous">
-  <link
-      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
-      rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/menu.css">
-	<link rel="stylesheet" href="css/footer.css">
-	<link rel="stylesheet" href="css/prism.css">
 
+	<link rel="stylesheet" href="css/styles.css">
 
   <title>{{ pageTitle }}</title>
 </head>
 <body>
 
 	<div class="page-wrapper chiller-theme">
-
 		{{> sidemenu}}
-
 		<main class="page-content">
-			{{{ body }}}
-			{{> footer}}
+			<div class="vertical-align">
+				<div class="mt-3">{{{ body }}}</div>
+				{{> footer}}
+			</div>
 		</main>
-
-
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -53,10 +38,8 @@
 			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 			crossorigin="anonymous">
 	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.min.js">
-	</script>
-	<script src="js/prism.js">
-	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.min.js"></script>
+	<script src="js/prism.js"></script>
 	{{# each scripts as | script |}}
 		<script src="js/{{ script }}"></script>
 	{{/each}}
