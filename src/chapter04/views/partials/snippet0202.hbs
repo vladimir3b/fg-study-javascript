@@ -1,0 +1,32 @@
+{{!-- To learn more about handlebars visit https://hackersandslackers.com/handlebars-templating-in-expressjs/ --}}
+{{!-- To learn more about PrismJs visit https://prismjs.com/index.html --}}
+<pre class="line-numbers"><code class="language-js">function createObservable(n) {
+  if (n % 2 === 0) {
+    return Observable.create(observer => {
+      let start = 0;
+      setInterval(() => {
+        observer.next(`Hello, ${n} is an even value.`);
+        if (start <= 10) {
+          start++;
+        } else {
+          observer.error('Too many values');
+        }
+      }, 1000);
+    })
+  } else {
+    return Observable.create(observer => {
+      let start = n;
+      setInterval(() => {
+        observer.next(start++);
+        if (start >= n + 15) {
+          observer.complete()
+        }
+      }, 1500);
+    })
+  }
+}
+let counter = 0;
+let source$ = defer(() => createObservable(counter++));
+source$.subscribe(console.log);
+source$.subscribe(console.log, console.warn, () => console.log('Observable was completed.'));
+</code></pre>

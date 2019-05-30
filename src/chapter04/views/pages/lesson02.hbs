@@ -4,4 +4,80 @@
       <h1 class="display-4">How to Create Observables</h1>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col">
+      <h2 class="mt-4">Create observables with Observable.create()</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <blockquote>
+        <p>
+          Creates a new cold Observable by calling the Observable constructor.
+        </p>
+        <footer class="text-right">
+          — from rxjs-dev.firebaseapp
+          <a href="https://rxjs-dev.firebaseapp.com/api/index/class/Observable#create"
+              target="_blank">
+            see more
+          </a>...
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+{{> snippet0201 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Please open Chrome DevTools Console to
+      <span class="btn-link"
+          style="cursor: pointer;"
+          onClick="Observables.create()">
+        run script above
+      </span>.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2 class="mt-4">Create observables with defer()</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <blockquote>
+        <p>
+          Creates an Observable that, on subscribe, calls an Observable factory to make an Observable for each new Observer.
+        </p>
+        <footer class="text-right">
+          — from rxjs-dev.firebaseapp
+          <a href="https://rxjs-dev.firebaseapp.com/api/index/function/defer"
+              target="_blank">
+            see more
+          </a>...
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+{{> snippet0202 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Please open Chrome DevTools Console to
+      <span class="btn-link"
+          style="cursor: pointer;"
+          onClick="Observables.defer()">
+        run script above
+      </span>.
+    </div>
+  </div>
+
+
 </div>
