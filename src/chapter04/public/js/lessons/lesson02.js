@@ -2,8 +2,14 @@ const Rx = window['rxjs'];
 const {
   Observable,
   defer,
-  of
+  of,
+  empty,
+  throwError
 } = Rx;
+
+const {
+  startWith
+} = Rx.operators;
 
 class Observables {
 
@@ -58,4 +64,17 @@ class Observables {
     source$.subscribe(console.log);
     source$.subscribe(console.log, console.warn, () => console.log('Observable was completed.'));
   }
+
+  static empty() {
+    empty().pipe(
+      startWith('Emits this and then completes.')
+    ).subscribe(console.log);
+  }
+
+  static throwError() {
+    throwError().pipe(
+      startWith('Emits this and then throws an error.')
+    ).subscribe(console.log);
+  }
+
 }
