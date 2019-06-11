@@ -4,11 +4,17 @@ const {
   defer,
   of,
   empty,
-  throwError
+  throwError,
+  interval,
+  range,
+  timer,
+  from,
+  fromEvent
 } = Rx;
 
 const {
-  startWith
+  startWith,
+  take
 } = Rx.operators;
 
 class Observables {
@@ -75,6 +81,48 @@ class Observables {
     throwError().pipe(
       startWith('Emits this and then throws an error.')
     ).subscribe(console.log);
+  }
+
+  static interval() {
+    interval(1000).pipe(
+      take(14)
+    ).subscribe(console.log);
+  }
+
+  static range() {
+    range(1, 5).subscribe(console.log);
+  }
+
+  static timer() {
+    timer(3000, 1000).pipe(
+      take(20)
+    ).subscribe(console.log);
+  }
+
+  static of() {
+    of(1, 2, 3, [1, 2, 3], {
+      name: 'John',
+      age: 37
+    }).subscribe(console.log);
+  }
+
+  static from() {
+    function* generateDoubles(seed) {
+      let i = seed;
+      while (true) {
+        yield i;
+        i = 2 * i; // double it
+      }
+    }
+
+    from(generateDoubles(3))
+      .pipe(take(10))
+      .subscribe(console.log);
+  }
+
+  static fromEvent() {
+    fromEvent(document, 'click')
+      .subscribe(console.log);
   }
 
 }
